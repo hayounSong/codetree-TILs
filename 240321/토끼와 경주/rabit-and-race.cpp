@@ -3,20 +3,20 @@
 #include <cmath>
 using namespace std;
 
-int Q, N, M, P;
-pair<int, int> rabit[2001];
-pair<int, int> where[2001];
-int score[100001];
-int pidw[10000001];
-int jump[2001] = {0};
-int direcx[4] = {0, 1, 0, -1};
-int direcy[4] = {1, 0, -1, 0};
-int isjump[2001] = {0};
-void moving(int S)
+long Q, N, M, P;
+pair<long, long> rabit[2001];
+pair<long, long> where[2001];
+long score[100001];
+long pidw[10000001];
+long jump[2001] = {0};
+long direcx[4] = {0, 1, 0, -1};
+long direcy[4] = {1, 0, -1, 0};
+long isjump[2001] = {0};
+void moving(long S)
 {
-    int sj = 999999;
-    int sn = -1;
-    for (int i = 0; i < P; i++)
+    long sj = 999999;
+    long sn = -1;
+    for (long i = 0; i < P; i++)
     {
         if (jump[i] < sj)
         {
@@ -57,18 +57,18 @@ void moving(int S)
         }
     }
     // 토끼 찾음
-    int cx = where[sn].first;
-    int cy = where[sn].second;
-    int cd = rabit[sn].second;
-    int bx = -1;
-    int by = -1;
-    int bs = -1;
+    long cx = where[sn].first;
+    long cy = where[sn].second;
+    long cd = rabit[sn].second;
+    long bx = -1;
+    long by = -1;
+    long bs = -1;
     isjump[sn]++;
     jump[sn]++;
-    for (int i = 0; i < 4; i++)
+    for (long i = 0; i < 4; i++)
     {
-        int fx = cx + direcx[i] * cd;
-        int fy = cy + direcy[i] * cd;
+        long fx = cx + direcx[i] * cd;
+        long fy = cy + direcy[i] * cd;
 
         if (fx >= N)
         {
@@ -125,7 +125,7 @@ void moving(int S)
     // 최고값 찾기
     where[sn].first = bx;
     where[sn].second = by;
-    for (int i = 0; i < P; i++)
+    for (long i = 0; i < P; i++)
     {
         if (i == sn)
         {
@@ -141,17 +141,17 @@ void moving(int S)
 int main()
 {
     cin >> Q;
-    for (int qq = 0; qq < Q; qq++)
+    for (long qq = 0; qq < Q; qq++)
     {
-        int sc;
+        long sc;
         cin >> sc;
         if (sc == 100)
         {
             cin >> N >> M >> P;
 
-            for (int i = 0; i < P; i++)
+            for (long i = 0; i < P; i++)
             {
-                int id, d;
+                long id, d;
                 cin >> id >> d;
                 rabit[i] = {id, d};
                 pidw[id] = i;
@@ -159,21 +159,21 @@ int main()
         }
         else if (sc == 200)
         {
-            int K, S;
+            long K, S;
             cin >> K >> S;
-            for (int i = 0; i < P; i++)
+            for (long i = 0; i < P; i++)
             {
                 isjump[i] = 0;
             }
-            for (int i = 0; i < K; i++)
+            for (long i = 0; i < K; i++)
             {
                 moving(S);
             }
-            int bw = -1;
-            int br = -1;
-            int bx = -1;
-            int by = -1;
-            for (int i = 0; i < P; i++)
+            long bw = -1;
+            long br = -1;
+            long bx = -1;
+            long by = -1;
+            for (long i = 0; i < P; i++)
             {
                 if (isjump[i] == 0)
                 {
@@ -224,15 +224,15 @@ int main()
         }
         else if (sc == 300)
         {
-            int id, L;
+            long id, L;
             cin >> id >> L;
-            int wh = pidw[id];
+            long wh = pidw[id];
             rabit[wh].second = rabit[wh].second * L;
         }
         else if (sc == 400)
         {
-            int maxi = 0;
-            for (int i = 0; i < P; i++)
+            long maxi = 0;
+            for (long i = 0; i < P; i++)
             {
                 if (maxi < score[i])
                 {
