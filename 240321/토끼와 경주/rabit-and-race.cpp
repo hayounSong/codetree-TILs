@@ -1,16 +1,15 @@
 #include <iostream>
-#include <vector>
 #include <cmath>
 using namespace std;
 
 long Q, N, M, P;
 pair<long, long> rabit[20001];
-pair<long, long> where[20001];
+pair<int, int> where[20001];
 long score[100001];
 long pidw[10000001];
 long jump[20001] = {0};
-long direcx[4] = {0, 1, 0, -1};
-long direcy[4] = {1, 0, -1, 0};
+int direcx[4] = {0, 1, 0, -1};
+int direcy[4] = {1, 0, -1, 0};
 long isjump[20001] = {0};
 void moving(long S)
 {
