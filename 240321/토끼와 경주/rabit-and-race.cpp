@@ -139,6 +139,9 @@ void moving(long S)
 
 int main()
 {
+    ios_base ::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
     cin >> Q;
     for (long qq = 0; qq < Q; qq++)
     {
