@@ -4,14 +4,14 @@
 using namespace std;
 
 long Q, N, M, P;
-pair<long, long> rabit[2001];
-pair<long, long> where[2001];
+pair<long, long> rabit[20001];
+pair<long, long> where[20001];
 long score[100001];
 long pidw[10000001];
-long jump[2001] = {0};
+long jump[20001] = {0};
 long direcx[4] = {0, 1, 0, -1};
 long direcy[4] = {1, 0, -1, 0};
-long isjump[2001] = {0};
+long isjump[20001] = {0};
 void moving(long S)
 {
     long sj = 999999;
