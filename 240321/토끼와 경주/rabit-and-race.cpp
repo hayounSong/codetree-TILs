@@ -2,15 +2,15 @@
 #include <cmath>
 using namespace std;
 
-long Q, N, M, P;
+long long Q, N, M, P;
 pair<long, long> rabit[20001];
 pair<int, int> where[20001];
-long score[100001];
-long pidw[10000001];
+long long score[100001];
+long long pidw[10000001];
 long jump[20001] = {0};
 int direcx[4] = {0, 1, 0, -1};
 int direcy[4] = {1, 0, -1, 0};
-long isjump[20001] = {0};
+long long isjump[20001] = {0};
 void moving(long S)
 {
     long sj = 999999;
@@ -80,7 +80,7 @@ void moving(long S)
         else if (fx < 0)
         {
             fx = fx % (2 * (N - 1));
-            fx = abs(fx);
+            fx = labs(fx);
             if (fx >= N)
             {
                 fx = N - 1 - (fx - (N - 1));
@@ -89,7 +89,7 @@ void moving(long S)
         if (fy >= M || fy < 0)
         {
             fy = fy % (2 * (M - 1));
-            fy = abs(fy);
+            fy = labs(fy);
             if (fy >= M)
             {
                 fy = M - 1 - (fy - (M - 1));
